@@ -1,11 +1,12 @@
+const url = require('./url.json');
 const tokopedia = require('./tokopedia');
 
-const main = async () => {
+const main = async (url) => {
   try {
-    setInterval(async () => {
-      const stock = await tokopedia.getStock();
-      console.log('stock', stock);
-    }, 60000);
+    const stock = await tokopedia.getStock(url);
+    if (stock && stock.status) await tokopedia.notify(stock);
+
+    return Promise.resolve(true);
   } catch (err) {
     return Promise.reject(err);
   }
@@ -13,8 +14,15 @@ const main = async () => {
 
 (async () => {
   try {
-    // await main();
-    await tokopedia.getStock();
+    setInterval(async () => {
+      await Promise.all(url.map(async (u) => {
+        try {
+          await main(u);
+        } catch (err) {
+          console.log('err', err);
+        }
+      }));
+    }, 10000);
   } catch (err) {
     console.log(err);
   }

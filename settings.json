@@ -1,0 +1,8 @@
+{
+    "BASE_API": "https://api.dexlab.space/v2/markets/",
+    "MARKET_BASE_ADDRESS": "https://trade.dexlab.space/#/market/",
+    "SOLANA_JSON_RPC": "https://api.mainnet-beta.solana.com/",
+    "TELEGRAM_API": "https://api.telegram.org/",
+    "BOT_TOKEN": "2073678549:AAGCUb5UT7mtTwP5AI-n-B7PdVnl3Z12j5E",
+    "CHAT_ID": "@sharingkala"
+}

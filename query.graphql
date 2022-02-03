@@ -1,0 +1,66 @@
+fragment ProductVariant on pdpDataProductVariant {
+  errorCode
+  parentID
+  defaultChild
+  sizeChart
+  variants {
+    productVariantID
+    variantID
+    name
+    identifier
+  }
+  children {
+    productID
+    price
+    priceFmt
+    optionID
+    productName
+    productURL
+    stock {
+      stock
+      isBuyable
+      minimumOrder
+      maximumOrder
+    }
+    isCOD
+    isWishlist
+  }
+}
+query PDPGetLayoutQuery(
+  $shopDomain: String
+  $productKey: String
+  $apiVersion: Float
+) {
+  pdpGetLayout(
+    shopDomain: $shopDomain
+    productKey: $productKey
+    apiVersion: $apiVersion
+  ) {
+    name
+    basicInfo {
+      alias
+      isQA
+      id: productID
+      shopID
+      shopName
+      minOrder
+      maxOrder
+      weight
+      weightUnit
+      condition
+      status
+      url
+      needPrescription
+      catalogID
+      isLeasing
+      isBlacklisted
+    }
+    components {
+      name
+      type
+      data {
+        ...ProductVariant
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "tokopedia-stok-notifier",
+  "version": "1.0.0",
+  "description": "tokopedia stock notifier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tokopedia",
+    "stock",
+    "notifier",
+    "bot"
+  ],
+  "author": "Toriq Ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}

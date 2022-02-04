@@ -1,5 +1,8 @@
 {
     "TELEGRAM_API": "https://api.telegram.org/",
     "BOT_TOKEN": "2073678549:AAGCUb5UT7mtTwP5AI-n-B7PdVnl3Z12j5E",
-    "CHAT_ID": "@tokopediastock"
+    "CHAT_ID": "@tokopediastock",
+    "telegram_webhook_path": "",
+    "telegram_port": "",
+    "use_polling": true
 }
